@@ -4,15 +4,19 @@
 #
 Name     : mvn-maven-compiler-plugin
 Version  : 3.7.0
-Release  : 3
+Release  : 4
 URL      : https://github.com/apache/maven-compiler-plugin/archive/maven-compiler-plugin-3.7.0.tar.gz
 Source0  : https://github.com/apache/maven-compiler-plugin/archive/maven-compiler-plugin-3.7.0.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
 Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.pom
 Source3  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
 Source4  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
-Source5  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
-Source6  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
+Source5  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar
+Source6  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom
+Source7  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+Source8  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
+Source9  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.jar
+Source10  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -58,11 +62,23 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1
 cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.5.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.5.1
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.8.0
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.8.0
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.pom
 
 
 %files
@@ -72,10 +88,14 @@ cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.pom
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.pom
 
 %files license
 %defattr(0644,root,root,0755)
