@@ -4,17 +4,20 @@
 #
 Name     : mvn-maven-compiler-plugin
 Version  : 3.7.0
-Release  : 2
+Release  : 3
 URL      : https://github.com/apache/maven-compiler-plugin/archive/maven-compiler-plugin-3.7.0.tar.gz
 Source0  : https://github.com/apache/maven-compiler-plugin/archive/maven-compiler-plugin-3.7.0.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
 Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.pom
 Source3  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
 Source4  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+Source5  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+Source6  : https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-maven-compiler-plugin-data = %{version}-%{release}
+Requires: mvn-maven-compiler-plugin-license = %{version}-%{release}
 
 %description
 No detailed description available
@@ -27,11 +30,22 @@ Group: Data
 data components for the mvn-maven-compiler-plugin package.
 
 
+%package license
+Summary: license components for the mvn-maven-compiler-plugin package.
+Group: Default
+
+%description license
+license components for the mvn-maven-compiler-plugin package.
+
+
 %prep
+%setup -q -n maven-compiler-plugin-maven-compiler-plugin-3.7.0
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/mvn-maven-compiler-plugin
+cp src/it/MCOMPILER-192/src/main/java/dummy/license.txt %{buildroot}/usr/share/package-licenses/mvn-maven-compiler-plugin/src_it_MCOMPILER-192_src_main_java_dummy_license.txt
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.7.0
 cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
 
@@ -44,6 +58,12 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1
 cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -52,5 +72,11 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.pom
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-maven-compiler-plugin/src_it_MCOMPILER-192_src_main_java_dummy_license.txt
